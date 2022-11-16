@@ -1,5 +1,5 @@
-import cities from '../__mocks__/api/citiesList';
-import forecast from '../__mocks__/api/forecasts';
+import cities from './api/citiesList';
+import forecast from './api/forecasts';
 
 export const fetchCities = async () => {
   return new Promise((resolve) => {
