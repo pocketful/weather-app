@@ -10,6 +10,11 @@ export const mapCity = (city) => ({
 export const mapForecast = (forecast) => ({
   // We will need to get from the forecast: maxTemp, minTemp, summary, date and icon.
   // Implement under this line ⬇️
+  maxTemp: forecast.Temperature.Maximum.Value,
+  minTemp: forecast.Temperature.Minimum.Value,
+  summary: forecast.Day.IconPhrase,
+  date: forecast.Date,
+  icon: forecast.Day.Icon,
 });
 
 

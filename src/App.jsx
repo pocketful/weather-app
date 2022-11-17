@@ -24,12 +24,20 @@ const App = () => {
   // Hint: use the data setters functions extracted from useState at the top of the component
   const getCityForecast = async (key) => {
     // Implement under this line ⬇️
+    try {
+      const result = await fetchCityForecast(key);
+      setFiveDayForecast(result.DailyForecasts.map((c) => mapForecast(c)));
+      setError();
+    } catch (e) {
+      setError(e.message);
+    }
   };
 
   // TODO: implement event handler on selecting a city from the list.
   // Hint: use the data setters functions extracted from useState at the top of the component
   const handleCitySelect = (key) => {
     // Implement under this line ⬇️
+    getCityForecast(key);
   };
 
   useEffect(() => {
