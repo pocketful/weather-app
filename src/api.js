@@ -12,7 +12,9 @@ export const fetchCityForecast = async (key) => {
    return new Promise((resolve, reject) => {
     if (forecast.hasOwnProperty(key)) {
       resolve(forecast[key]);
-    }
+    } else {
+      reject(new Error('This city is not available'));
+    } 
   });
 }
 
