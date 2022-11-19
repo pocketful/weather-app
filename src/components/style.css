@@ -1,4 +1,26 @@
 /* TODO: implement the WeatherCard design */
 /* Feel free to add more CSS classes as needed */
 .weather_card {
+  border-radius: 6px;
+  border: 1px solid gray;
+  padding: 0 1em;
+  font-size: 12px;
+  margin: 5px 0;
+  background-color: white;
+  line-height: 0.5;
+  margin-right: 10px;
+}
+
+.card_date,
+.card_summary {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.card_summary {
+  color: #2a95bc;
+}
+
+.card_temp {
+  display: flex;
 }

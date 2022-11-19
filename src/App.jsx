@@ -38,6 +38,7 @@ const App = () => {
   const handleCitySelect = (key) => {
     // Implement under this line ⬇️
     getCityForecast(key);
+    setActiveCity(key);
   };
 
   useEffect(() => {
@@ -85,6 +86,13 @@ const App = () => {
         <div className="weather_schedule">
           {/*  TODO: Display weather card for each forecast day */}
           {/* Hint: use the data that will be set in fiveDayForecast */}
+          {error ? (
+            <p className='error'>{error}</p>
+          ) : (
+            fiveDayForecast?.map((forecast, idx) => (
+              <WeatherCard key={idx} {...forecast} />              
+            ))
+          )}
         </div>
       </div>
     </div>
