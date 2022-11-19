@@ -10,21 +10,23 @@ const minTwoDigits = (num) => num > 9 ? num : '0' + num;
 
 // TODO: Implement weather card based on the design from the screenshot in the instructions.
 export const WeatherCard = (props) => {
-  const options = {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  };
-  const date = new Date(props.date);
-  const dateFormatted = date.toLocaleDateString('en-GB', options);
+    
+  const formatDate = (date) => {
+    const options = {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    };
+    return new Date(date).toLocaleDateString('en-GB', options);
+  }
 
   const icon = getIcon(minTwoDigits(props.icon));
 
   return (
     <div className="weather_card" data-testid="weather_card">
       {/* Implement under this line ⬇️ */}
-      <p className="card_date">{dateFormatted}</p>
+      <p className="card_date">{formatDate(props.date)}</p>
       <p className="card_summary">{props.summary}</p>
       <div className="card_temp">
         <div>

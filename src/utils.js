@@ -10,13 +10,12 @@ export const mapCity = (city) => ({
 export const mapForecast = (forecast) => ({
   // We will need to get from the forecast: maxTemp, minTemp, summary, date and icon.
   // Implement under this line ⬇️
-  maxTemp: forecast.Temperature.Maximum.Value,
-  minTemp: forecast.Temperature.Minimum.Value,
-  summary: forecast.Day.IconPhrase,
   date: forecast.Date,
+  summary: forecast.Day.IconPhrase,
+  minTemp: forecast.Temperature.Minimum.Value,
+  maxTemp: forecast.Temperature.Maximum.Value,
   icon: forecast.Day.Icon,
 });
-
 
 export const cs = (...classnames) => {
   return classnames.filter(Boolean).join(' ')
