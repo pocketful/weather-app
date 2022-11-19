@@ -41,9 +41,28 @@ const App = () => {
     setActiveCity(key);
   };
 
+  const handleSortSelect = () => {
+    const fiveDayForecastCopy = [...fiveDayForecast];
+
+    if (sortParam === 'minTemp') {
+      fiveDayForecastCopy.sort((a, b) => a.minTemp - b.minTemp);
+    }
+    if (sortParam === 'maxTemp') {
+      fiveDayForecastCopy.sort((a, b) => b.maxTemp - a.maxTemp);
+    }
+    if (sortParam === '') {
+      fiveDayForecastCopy.sort((a, b) => (a.date > b.date ? 1 : -1));
+    }
+    setFiveDayForecast(fiveDayForecastCopy);
+  };
+
   useEffect(() => {
     getCities();
   }, []);
+
+  useEffect(() => {
+    handleSortSelect();
+  }, [sortParam]);
 
   return (
     <div>
@@ -87,10 +106,10 @@ const App = () => {
           {/*  TODO: Display weather card for each forecast day */}
           {/* Hint: use the data that will be set in fiveDayForecast */}
           {error ? (
-            <p className='error'>{error}</p>
+            <p className="error">{error}</p>
           ) : (
-            fiveDayForecast?.map((forecast, idx) => (
-              <WeatherCard key={idx} {...forecast} />              
+            fiveDayForecast?.map((forecast) => (
+              <WeatherCard key={forecast.date} {...forecast} />
             ))
           )}
         </div>
