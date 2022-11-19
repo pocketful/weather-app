@@ -1,9 +1,7 @@
 # Weather App - React
 
 This was React/JS/CSS assignment in which I had to implement the missing parts of the Weather app. 
-Detailed task instructions can be found [here](./docs/instructions.md). Note that in order to run the project locally, I had to change the original file structure a bit.
-
-<br />
+Detailed task instructions can be found [here](./docs/instructions.md). Note that in order to run the project locally, I had to change the original file structure a bit.<br /><br />
 
 # 🚀 Getting started
 

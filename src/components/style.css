@@ -3,11 +3,10 @@
 .weather_card {
   border-radius: 6px;
   border: 1px solid gray;
-  padding: 0 1em;
+  padding: 12px;
   font-size: 12px;
   margin: 5px 0;
   background-color: white;
-  line-height: 0.5;
   margin-right: 10px;
 }
 
@@ -15,6 +14,7 @@
 .card_summary {
   font-size: 14px;
   font-weight: bold;
+  padding-bottom: 5px;
 }
 
 .card_summary {
@@ -23,4 +23,8 @@
 
 .card_temp {
   display: flex;
+}
+
+img {
+  object-fit: contain;
 }
